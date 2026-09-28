@@ -1,0 +1,299 @@
+@import "tailwindcss";
+
+/*
+  This file intentionally contains only the CSS that Tailwind utilities cannot
+  express cleanly: theme tokens, state selectors, keyframes, and a few effects.
+  Layout, spacing, typography, colors, borders, grids, responsive behavior,
+  and component styling live directly in index.html as Tailwind classes.
+*/
+
+:root {
+  --c-bg: #0a0a0c;
+  --c-bg-2: #16161a;
+  --c-surface: #1a1a1f;
+  --c-text: #f5f5f5;
+  --c-text-soft: #a8a8b3;
+  --c-border: rgba(255, 255, 255, 0.08);
+  --c-accent: #b91c1c;
+  --c-accent-2: #dc2626;
+  --c-accent-contrast: #ffffff;
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-fa: "Vazirmatn", "Inter", system-ui, sans-serif;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.55);
+}
+
+[data-theme="cyan-white"] {
+  --c-bg: #f5fbfd;
+  --c-bg-2: #e6f7fb;
+  --c-surface: #ffffff;
+  --c-text: #0c4a6e;
+  --c-text-soft: #475569;
+  --c-border: rgba(6, 182, 212, 0.18);
+  --c-accent: #06b6d4;
+  --c-accent-2: #0ea5e9;
+  --c-accent-contrast: #ffffff;
+  --font-body: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --shadow-sm: 0 2px 8px rgba(6, 182, 212, 0.08);
+  --shadow-md: 0 8px 28px rgba(6, 182, 212, 0.12);
+  --shadow-lg: 0 20px 60px rgba(6, 182, 212, 0.18);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   PAGE STATE
+   ============================================================ */
+
+body.page--loading,
+body[data-state="hero"] {
+  overflow: hidden;
+}
+
+/*
+  Keep the hero out of the normal document flow.
+  This prevents the resume section from starting below
+  an invisible hero section.
+*/
+#home {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  transition:
+    opacity 500ms ease,
+    transform 500ms ease;
+}
+
+/* Resume page */
+#resume {
+  position: relative;
+  z-index: 10;
+}
+
+/* ============================================================
+   RESUME OPEN STATE
+   ============================================================ */
+
+body[data-state="resume-open"] {
+  overflow-y: auto;
+}
+
+body[data-state="resume-open"] #topbar {
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+body[data-state="resume-open"] #home {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.98);
+}
+
+body[data-state="resume-open"] #resume {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body[data-state="resume-open"] #floating {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   HERO STATE
+   ============================================================ */
+
+body[data-state="hero"] #home {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+body[data-state="hero"] #resume {
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+body[data-state="hero"] #footer {
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+[data-theme="dark-red"] [data-theme-icon="cyan-white"],
+[data-theme="cyan-white"] [data-theme-icon="dark-red"] {
+  display: none;
+}
+
+[data-theme="dark-red"] [data-theme-only="cyan-white"],
+[data-theme="cyan-white"] [data-theme-only="dark-red"] {
+  display: none;
+}
+
+[data-lang="fa"] body {
+  font-family: var(--font-fa);
+}
+
+[data-lang="fa"] #topbar > div {
+  flex-direction: row-reverse;
+}
+
+[data-lang="fa"] #topbar a {
+  flex-direction: row-reverse;
+}
+
+[data-lang="fa"] .resume-section {
+  text-align: right;
+}
+
+[data-lang="fa"] #experienceList,
+[data-lang="fa"] #educationList {
+  border-left: 0;
+  border-right: 2px solid var(--c-border);
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+[data-lang="fa"] .timeline-card::before {
+  left: auto;
+  right: -2.25rem;
+}
+
+[data-lang="fa"] #floating {
+  right: auto;
+  left: 1rem;
+}
+
+/* -------------------------
+   Intro animation
+   ------------------------- */
+@keyframes smoke-drift {
+  from { transform: translateX(0) scale(1); opacity: 0.95; }
+  to { transform: translateX(-100%) scale(1.4); opacity: 0; }
+}
+
+@keyframes smoke-drift-reverse {
+  from { transform: translateX(20%) scale(1.1); opacity: 0.85; }
+  to { transform: translateX(-120%) scale(1.6); opacity: 0; }
+}
+
+@keyframes wave-drain {
+  0% { transform: translateY(-100%); opacity: 1; }
+  60% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes wave-sway {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-25px, -10px); }
+}
+
+@keyframes droplet {
+  0% { transform: translateY(-20px); opacity: 0; }
+  20% { opacity: 0.6; }
+  100% { transform: translateY(110vh); opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.05); }
+  66% { transform: translate(-20px, 30px) scale(0.95); }
+}
+
+@keyframes pulse-status {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
+  50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.intro-smoke {
+  animation: smoke-drift 2.4s ease-out forwards;
+  opacity: 0.95;
+}
+
+.intro-smoke--2 {
+  animation-name: smoke-drift-reverse;
+  animation-duration: 2.6s;
+  animation-delay: 0.2s;
+  opacity: 0.85;
+}
+
+.intro-smoke--3 {
+  animation-delay: 0.4s;
+  animation-duration: 2.8s;
+  opacity: 0.75;
+}
+
+.intro-wave {
+  color: var(--c-accent);
+  animation: wave-sway 3s ease-in-out infinite;
+}
+
+.intro-wave-path {
+  animation: wave-drain 2.5s ease-in-out forwards;
+}
+
+.intro-droplet {
+  opacity: 0.6;
+  animation: droplet 2.2s linear infinite;
+}
+
+.animate-float { animation: float 14s ease-in-out infinite; }
+.animate-status-pulse { animation: pulse-status 2s ease-in-out infinite; }
+.animate-cursor-blink { animation: blink 1s steps(1) infinite; }
+.animate-spin-slow { animation: spin-slow 18s linear infinite; }
+.animate-fade-in-up { animation: fade-in-up .8s ease both; }
+
+/* Resume cards are generated by JavaScript, so their visual utilities are
+   kept in the JS template strings instead of CSS selectors. */
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  left: -2.25rem;
+  top: 1.6rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: var(--c-accent);
+  border: 3px solid var(--c-bg);
+  box-shadow: 0 0 0 2px var(--c-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

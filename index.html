@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark-red" data-lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Abolfazl Pourmohabbat — Front-end Developer. Crafting performant, accessible, and beautiful web experiences."
+      data-i18n="meta.description"
+    />
+    <meta
+      name="keywords"
+      content="frontend developer, web developer, portfolio, Abolfazl Pourmohabbat, JavaScript, HTML, CSS, Tailwind"
+    />
+    <meta name="author" content="Abolfazl Pourmohabbat" />
+    <meta name="theme-color" content="#0a0a0c" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Abolfazl Pourmohabbat — Front-end Developer" />
+    <meta property="og:description" content="Crafting performant, accessible, and beautiful web experiences." />
+    <meta property="og:image" content="./assets/images/og-cover.svg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Abolfazl Pourmohabbat — Front-end Developer" />
+    <meta name="twitter:description" content="Crafting performant, accessible, and beautiful web experiences." />
+
+    <title data-i18n="meta.title">Abolfazl Pourmohabbat | Front-end Developer (Tailwind Css/Angular)</title>
+
+    <!-- Font loading is intentionally kept in HTML because it is external and global. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="./assets/images/avatar2.webp" />
+
+    <!-- Compile input.css to output.css with Tailwind before deploying. -->
+    <link rel="stylesheet" href="src/output.css" />
+
+    <!-- Canonical (Duplicate content) -->
+    <link rel="canonical" href="https://pourmohabbat.vercel.app/" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abolfazl Pourmohabbat",
+  "url": "https://pourmohabbat.vercel.app",
+  "image": "https://pourmohabbat.vercel.app/assets/images/avatar.webp",
+  "jobTitle": "Front-end Developer",
+  "description": "Front-end Developer crafting performant, accessible, and beautiful web experiences.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tehran",
+    "addressCountry": "IR"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/abolfazl-pourmohabbat/",
+    "https://www.instagram.com/abolfazl.pourmohabbat/",
+    "https://t.me/pourmohabbat"
+  ],
+  "knowsAbout": [
+  "JavaScript", "HTML", "CSS", "Tailwind CSS", "Angular", "Front-end Development"
+  ],
+  "email": "test@test.com"
+}
+</script>
+  </head>
+
+  <body
+    class="page--loading min-h-screen overflow-x-hidden bg-(--c-bg) font-(--font-body) text-(--c-text) antialiased transition-colors duration-500"
+    data-state="hero"
+  >
+    <!-- First-visit transition overlay. Most of its animation lives in input.css. -->
+    <div id="intro" class="pointer-events-none fixed inset-0 z-9999 hidden overflow-hidden" aria-hidden="true">
+      <div data-theme-only="dark-red" class="absolute inset-0 overflow-hidden text-(--c-bg)">
+        <span class="intro-smoke absolute inset-0 bg-[radial-gradient(ellipse_at_center,currentColor_0%,currentColor_30%,transparent_80%)]"></span>
+        <span class="intro-smoke intro-smoke--2 absolute inset-0 bg-[radial-gradient(ellipse_at_center,currentColor_0%,currentColor_30%,transparent_80%)]"></span>
+        <span class="intro-smoke intro-smoke--3 absolute inset-0 bg-[radial-gradient(ellipse_at_center,currentColor_0%,currentColor_30%,transparent_80%)]"></span>
+      </div>
+
+      <div data-theme-only="cyan-white" class="absolute inset-0 overflow-hidden text-(--c-accent)">
+        <svg class="intro-wave absolute left-0 top-0 h-full w-[200%]" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+          <path
+            class="intro-wave-path"
+            d="M0,160 C240,260 480,260 720,200 C960,140 1200,140 1440,180 L1440,320 L0,320 Z"
+            fill="currentColor"
+          />
+        </svg>
+        <div class="absolute inset-0" aria-hidden="true">
+          <span class="intro-droplet absolute left-[10%] top-5 h-3.5 w-1.5 rounded-full bg-current"></span>
+          <span class="intro-droplet absolute left-[25%] top-5 h-3.5 w-1.5 rounded-full bg-current [animation-delay:.4s]"></span>
+          <span class="intro-droplet absolute left-[40%] top-5 h-3.5 w-1.5 rounded-full bg-current [animation-delay:.8s]"></span>
+          <span class="intro-droplet absolute left-[55%] top-5 h-3.5 w-1.5 rounded-full bg-current [animation-delay:.2s]"></span>
+          <span class="intro-droplet absolute left-[70%] top-5 h-3.5 w-1.5 rounded-full bg-current [animation-delay:.6s]"></span>
+          <span class="intro-droplet absolute left-[85%] top-5 h-3.5 w-1.5 rounded-full bg-current [animation-delay:1s]"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fixed navigation controls. They disappear while the resume is open. -->
+    <header
+      id="topbar"
+      class="fixed inset-x-0 top-0 z-100 px-4 py-4 transition-[transform,opacity] duration-500 sm:px-8 sm:py-5"
+    >
+
+        <div class="flex items-center justify-end gap-2 mx-auto max-w-300">
+          <button
+            id="langToggle"
+            type="button"
+            aria-label="Toggle language"
+            class="inline-flex items-center gap-1.5 rounded-full border border-(--c-border) bg-(--c-surface) px-3.5 py-2 text-[.85rem] font-semibold text-(--c-text) shadow-(--shadow-sm) transition duration-300 hover:-translate-y-0.5 hover:border-(--c-accent) hover:text-(--c-accent) hover:shadow-(--shadow-md)"
+          >
+            <span aria-hidden="true" class="text-base leading-none">🌐</span>
+            <span data-i18n="control.lang">FA</span>
+          </button>
+          <button
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle theme"
+            class="inline-flex items-center gap-1.5 rounded-full border border-(--c-border) bg-(--c-surface) px-3.5 py-2 text-[.85rem] font-semibold text-(--c-text) shadow-(--shadow-sm) transition duration-300 hover:-translate-y-0.5 hover:border-(--c-accent) hover:text-(--c-accent) hover:shadow-(--shadow-md)"
+          >
+            <span data-theme-icon="dark-red" aria-hidden="true">🌙</span>
+            <span data-theme-icon="cyan-white" aria-hidden="true">☀️</span>
+          </button>
+        </div>
+      
+    </header>
+
+    <!-- Hero / landing section -->
+    <main
+      id="home"
+      class="relative z-10 flex min-h-svh items-center justify-center overflow-hidden px-4 py-20 transition-[opacity,transform] duration-500 sm:px-6 sm:py-24 lg:px-8 lg:py-28"
+    >
+      <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div class="absolute left-[-8%] top-[-10%] size-120 animate-float rounded-full bg-(--c-accent) opacity-45 blur-[80px]"></div>
+        <div class="absolute bottom-[-15%] right-[-10%] size-130 animate-float rounded-full bg-(--c-accent-2) opacity-45 blur-[80px] [animation-delay:-7s]"></div>
+        <div class="absolute inset-0 opacity-25 bg-[linear-gradient(var(--c-border)_1px,transparent_1px),linear-gradient(90deg,var(--c-border)_1px,transparent_1px)] bg-size-[50px_50px] mask-[radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"></div>
+      </div>
+
+      <div class="relative z-10 flex w-full max-w-180 flex-col items-center gap-4 px-4 py-4 text-center transition-all duration-500 sm:gap-5 sm:px-6 sm:py-6 lg:max-w-200 lg:gap-6 lg:px-8 lg:py-8"">
+        <div class="relative size-28 shrink-0 transition-transform duration-500 sm:size-32 lg:size-36" data-animate="hero-avatar">
+          <div class="relative z-2 size-full overflow-hidden rounded-full border-[3px] border-(--c-accent) bg-(--c-surface) shadow-(--shadow-lg)">
+            <img id="avatarImg" src="./assets/images/avatar.webp" alt="Abolfazl Pourmohabbat" class="size-full object-cover" />
+          </div>
+          <div class="absolute -inset-2 rounded-full border-2 border-dashed border-(--c-accent) opacity-50 animate-spin-slow" aria-hidden="true"></div>
+          <div class="absolute -bottom-1 -right-20 z-3 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-(--c-border) bg-(--c-surface) px-2.5 py-1 text-[.7rem] font-semibold shadow-(--shadow-sm)">
+            <span class="size-2 rounded-full bg-green-500 shadow-[0_0_0_0_rgba(34,197,94,.6)] animate-status-pulse"></span>
+            <span data-i18n="hero.status">Available for work</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-3">
+          <p data-i18n="hero.greeting" class="animate-fade-in-up text-[.95rem] font-medium uppercase tracking-wider text-(--c-accent)">Hello, I'm</p>
+          <h1 class="animate-fade-in-up font-(--font-display) text-[clamp(2rem,7vw,3.5rem)] font-extrabold leading-[1.1] tracking-[-.02em] [animation-delay:.1s]">
+            <span data-i18n="hero.name" class="bg-linear-to-br from-(--c-text) to-(--c-accent) bg-clip-text text-transparent">Abolfazl Pourmohabbat</span>
+          </h1>
+          <h2 class="animate-fade-in-up inline-flex items-center gap-2 text-[clamp(1.1rem,3.5vw,1.5rem)] font-medium text-(--c-text-soft) [animation-delay:.2s]">
+            <span data-i18n="hero.titlePrefix">I'm a </span>
+            <span id="typedTitle" data-i18n="hero.title" class="font-bold text-(--c-accent)">Front-end Developer</span>
+            <span aria-hidden="true" class="animate-cursor-blink font-normal text-(--c-accent)">|</span>
+          </h2>
+          <p data-i18n="hero.bio" class="animate-fade-in-up max-w-135 text-[clamp(.95rem,2.5vw,1.05rem)] leading-[1.7] text-(--c-text-soft) [animation-delay:.3s]">
+            I build fast, responsive, and polished web experiences with a strong focus on clean code and pixel-perfect design.
+          </p>
+
+          <div id="heroSocial" aria-label="Social links" class="animate-fade-in-up flex flex-wrap items-center justify-center gap-2.5 [animation-delay:.4s]">
+            <a href="#" target="_blank" rel="noopener" aria-label="GitHub" data-social="github" class="inline-flex size-11 items-center justify-center rounded-[14px] border border-(--c-border) bg-(--c-surface) text-(--c-text) shadow-(--shadow-sm) transition duration-300 hover:-translate-y-1 hover:border-(--c-accent) hover:bg-(--c-accent) hover:text-(--c-accent-contrast) hover:shadow-(--shadow-md)">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.02 1.74 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.52-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.18-1.49 3.15-1.18 3.15-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.13 0 1.54-.01 2.78-.01 3.16 0 .31.21.67.8.55C20.21 21.38 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/abolfazl-pourmohabbat/" target="_blank" rel="noopener" aria-label="LinkedIn" data-social="linkedin" class="inline-flex size-11 items-center justify-center rounded-[14px] border border-(--c-border) bg-(--c-surface) text-(--c-text) shadow-(--shadow-sm) transition duration-300 hover:-translate-y-1 hover:border-(--c-accent) hover:bg-(--c-accent) hover:text-(--c-accent-contrast) hover:shadow-(--shadow-md)">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            </a>
+            <a href="https://t.me/pourmohabbat" target="_blank" rel="noopener" aria-label="Telegram" data-social="telegram" class="inline-flex size-11 items-center justify-center rounded-[14px] border border-(--c-border) bg-(--c-surface) text-(--c-text) shadow-(--shadow-sm) transition duration-300 hover:-translate-y-1 hover:border-(--c-accent) hover:bg-(--c-accent) hover:text-(--c-accent-contrast) hover:shadow-(--shadow-md)">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M23.5 3.5L1.5 11.2c-1.2.5-1.2 1.2-.2 1.5l5.5 1.7 2.1 6.5c.2.6.4.9.9.9.4 0 .7-.2 1-.5l2.7-2.6 5.5 4.1c1 .6 1.7.3 2-.9l3.6-17c.4-1.6-.5-2.3-1.5-1.9l-.1-.5zM19.7 7.1L9.9 16c-.2.2-.4.4-.4.7l-.1 2.6-1.5-4.5 11.3-7.1c.5-.3.9.1.5.4l-.0 0z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/abolfazl.pourmohabbat/" target="_blank" rel="noopener" aria-label="Instagram" data-social="instagram" class="inline-flex size-11 items-center justify-center rounded-[14px] border border-(--c-border) bg-(--c-surface) text-(--c-text) shadow-(--shadow-sm) transition duration-300 hover:-translate-y-1 hover:border-(--c-accent) hover:bg-(--c-accent) hover:text-(--c-accent-contrast) hover:shadow-(--shadow-md)">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M7.03.084c-1.277.06-2.149.264-2.91.563a5.9 5.9 0 0 0-2.124 1.388a5.9 5.9 0 0 0-1.38 2.127C.321 4.926.12 5.8.064 7.076s-.069 1.688-.063 4.947s.021 3.667.083 4.947c.061 1.277.264 2.149.563 2.911c.308.789.72 1.457 1.388 2.123a5.9 5.9 0 0 0 2.129 1.38c.763.295 1.636.496 2.913.552c1.278.056 1.689.069 4.947.063s3.668-.021 4.947-.082c1.28-.06 2.147-.265 2.91-.563a5.9 5.9 0 0 0 2.123-1.388a5.9 5.9 0 0 0 1.38-2.129c.295-.763.496-1.636.551-2.912c.056-1.28.07-1.69.063-4.948c-.006-3.258-.02-3.667-.081-4.947c-.06-1.28-.264-2.148-.564-2.911a5.9 5.9 0 0 0-1.387-2.123a5.9 5.9 0 0 0-2.128-1.38C19.074.321 18.202.119 16.924.064 15.647.009 15.236-.005 11.977.001 8.718.008 8.31.022 7.03.084m.14 21.693c-1.17-.051-1.805-.245-2.229-.408a3.7 3.7 0 0 1-1.382-.895a3.7 3.7 0 0 1-.9-1.378c-.164-.423-.362-1.058-.417-2.228c-.059-1.265-.072-1.644-.079-4.848c-.007-3.204.005-3.583.061-4.848c.05-1.169.246-1.805.408-2.228c.216-.561.476-.96.895-1.382a3.7 3.7 0 0 1 1.378-.9c.423-.165 1.058-.362 2.227-.417c1.266-.06 1.645-.072 4.848-.079c3.204-.007 3.584.005 4.85.061c1.169.051 1.805.245 2.228.408c.561.216.96.475 1.382.895c.422.419.682.818.901 1.379c.165.422.362 1.056.417 2.226c.06 1.266.074 1.645.08 4.848c.006 3.203-.006 3.583-.061 4.848c-.051 1.17-.245 1.805-.408 2.229c-.216.56-.477.96-.896 1.381a3.7 3.7 0 0 1-1.378.9c-.422.165-1.058.362-2.226.417c-1.266.06-1.645.072-4.849.079c-3.205.007-3.583-.006-4.848-.06M16.953 5.586a1.44 1.44 0 1 0 0-2.88a1.44 1.44 0 0 0 0 2.88M5.839 12.012a6.16 6.16 0 1 0 12.323-.024a6.16 6.16 0 0 0-12.323.024M8 12.008a4 4 0 1 1 8.008 0A4 4 0 0 1 8 12.008"/></svg>
+            </a>
+          </div>
+
+          <button
+            id="viewResumeBtn"
+            type="button"
+            class="group relative mt-1 inline-flex items-center gap-2 overflow-hidden rounded-full bg-(--c-accent) px-7 py-3.5 text-base font-bold tracking-[.02em] text-(--c-accent-contrast) shadow-(--shadow-md) transition duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-(--shadow-lg) active:translate-y-0 active:scale-[.99]"
+          >
+            <span class="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full"></span>
+            <span data-i18n="hero.cta" class="relative">View Resume</span>
+            <span aria-hidden="true" class="relative text-[1.2em] transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Resume content. Hidden from assistive tech until opened. -->
+    <section id="resume" aria-hidden="true" class="relative z-10 pointer-events-none min-h-screen translate-y-10 px-5 pb-24 opacity-0 transition-[opacity,transform] duration-500 sm:px-8">
+      <div class="sticky -top-5 z-90 -mx-5 mb-8 border-b border-(--c-border) bg-[color-mix(in_srgb,var(--c-bg)_88%,transparent)] px-5 py-3 backdrop-blur-xl sm:-mx-8 sm:px-8">
+        <div class="mx-auto flex max-w-275 items-center gap-3">
+          <div class="size-10 shrink-0 overflow-hidden rounded-full border-2 border-(--c-accent)">
+            <img src="./assets/images/avatar.webp" alt="" class="size-full object-cover" />
+          </div>
+          <div class="min-w-0 flex-1">
+            <p data-i18n="hero.name" class="truncate text-sm font-bold">Abolfazl Pourmohabbat</p>
+            <p data-i18n="hero.title" class="truncate text-xs text-(--c-text-soft)">Front-end Developer</p>
+          </div>
+          <button
+            id="closeResumeBtn"
+            type="button"
+            title="Close resume"
+            class="inline-flex items-center gap-2 rounded-full border border-(--c-border) bg-(--c-surface) px-3.5 py-2 text-sm font-semibold transition duration-300 hover:-translate-y-0.5 hover:border-(--c-accent) hover:text-(--c-accent)"
+          >
+            <span aria-hidden="true">✕</span>
+            <span data-i18n="resume.close" class="hidden sm:inline">Close Resume</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mx-auto max-w-275">
+        <!-- ABOUT -->
+        <article id="about" class="resume-section py-10 sm:py-14">
+          <header class="mb-8 flex items-center gap-4 sm:mb-10">
+            <span class="text-sm font-bold tracking-widest text-(--c-accent)">01</span>
+            <h2 data-i18n="section.about" class="font-(--font-display) text-2xl font-extrabold sm:text-3xl">About</h2>
+            <span class="h-px flex-1 bg-linear-to-r from-(--c-border) to-transparent"></span>
+          </header>
+          <div class="space-y-7">
+            <p data-i18n="about.text" class="max-w-[70ch] whitespace-pre-line text-base leading-8 text-(--c-text-soft)">I build fast, responsive, and polished web experiences with a strong focus on clean code and pixel-perfect design.</p>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <div class="rounded-2xl border border-(--c-border) bg-(--c-surface) p-4">
+                <span data-i18n="about.location" class="block text-xs font-semibold uppercase tracking-wider text-(--c-text-soft)">Location</span>
+                <span data-i18n="about.locationValue" class="mt-1 block font-semibold">Tehran, Iran</span>
+              </div>
+              <div class="rounded-2xl border border-(--c-border) bg-(--c-surface) p-4">
+                <span data-i18n="about.email" class="block text-xs font-semibold uppercase tracking-wider text-(--c-text-soft)">Email</span>
+                <a href="mailto:test@test.com" class="mt-1 block font-semibold text-(--c-accent) hover:underline">test@test.com</a>
+              </div>
+              <div class="rounded-2xl border border-(--c-border) bg-(--c-surface) p-4">
+                <span data-i18n="about.status" class="block text-xs font-semibold uppercase tracking-wider text-(--c-text-soft)">Status</span>
+                <span data-i18n="about.statusValue" class="mt-1 flex items-center gap-2 font-semibold text-green-500 before:size-2 before:rounded-full before:bg-green-500">Open to opportunities</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- SKILLS -->
+        <article id="skills" class="resume-section py-10 sm:py-14">
+          <header class="mb-8 flex items-center gap-4 sm:mb-10">
+            <span class="text-sm font-bold tracking-widest text-(--c-accent)">02</span>
+            <h2 data-i18n="section.skills" class="font-(--font-display) text-2xl font-extrabold sm:text-3xl">Skills</h2>
+            <span class="h-px flex-1 bg-linear-to-r from-(--c-border) to-transparent"></span>
+          </header>
+          <div id="skillsList" class="grid grid-cols-1 gap-4 sm:grid-cols-2"></div>
+        </article>
+
+        <!-- EXPERIENCE -->
+        <article id="experience" class="resume-section py-10 sm:py-14">
+          <header class="mb-8 flex items-center gap-4 sm:mb-10">
+            <span class="text-sm font-bold tracking-widest text-(--c-accent)">03</span>
+            <h2 data-i18n="section.experience" class="font-(--font-display) text-2xl font-extrabold sm:text-3xl">Experience</h2>
+            <span class="h-px flex-1 bg-linear-to-r from-(--c-border) to-transparent"></span>
+          </header>
+          <div id="experienceList" class="relative flex flex-col gap-6 border-l-2 border-(--c-border) pl-6"></div>
+        </article>
+
+        <!-- EDUCATION -->
+        <article id="education" class="resume-section py-10 sm:py-14">
+          <header class="mb-8 flex items-center gap-4 sm:mb-10">
+            <span class="text-sm font-bold tracking-widest text-(--c-accent)">04</span>
+            <h2 data-i18n="section.education" class="font-(--font-display) text-2xl font-extrabold sm:text-3xl">Education</h2>
+            <span class="h-px flex-1 bg-linear-to-r from-(--c-border) to-transparent"></span>
+          </header>
+          <div id="educationList" class="relative flex flex-col gap-6 border-l-2 border-(--c-border) pl-6"></div>
+        </article>
+
+        <!-- PROJECTS -->
+        <article id="projects" class="resume-section py-10 sm:py-14">
+          <header class="mb-8 flex items-center gap-4 sm:mb-10">
+            <span class="text-sm font-bold tracking-widest text-(--c-accent)">05</span>
+            <h2 data-i18n="section.projects" class="font-(--font-display) text-2xl font-extrabold sm:text-3xl">Projects</h2>
+            <span class="h-px flex-1 bg-linear-to-r from-(--c-border) to-transparent"></span>
+          </header>
+          <div id="projectsList" class="grid grid-cols-1 gap-6 md:grid-cols-2"></div>
+        </article>
+
+        <!-- CONTACT -->
+        <article id="contact" class="resume-section py-10 sm:py-14">
+          <header class="mb-8 flex items-center gap-4 sm:mb-10">
+            <span class="text-sm font-bold tracking-widest text-(--c-accent)">06</span>
+            <h2 data-i18n="section.contact" class="font-(--font-display) text-2xl font-extrabold sm:text-3xl">Contact</h2>
+            <span class="h-px flex-1 bg-linear-to-r from-(--c-border) to-transparent"></span>
+          </header>
+          <p data-i18n="contact.text" class="mb-6 max-w-[60ch] text-base leading-8 text-(--c-text-soft)">Have a project in mind or want to work together? Reach out through any of the channels below.</p>
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <a href="mailto:test@test.com" class="group flex flex-col gap-1.5 rounded-2xl border border-(--c-border) bg-(--c-surface) p-5 transition duration-300 hover:-translate-y-1 hover:border-(--c-accent) hover:shadow-(--shadow-md)">
+              <span class="mb-1 inline-flex size-11 items-center justify-center rounded-xl bg-(--c-accent) text-lg font-bold text-(--c-accent-contrast)">✉</span>
+              <span data-i18n="contact.email" class="text-xs font-semibold uppercase tracking-wider text-(--c-text-soft)">Email</span>
+              <span class="font-semibold">test@test.com</span>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="group flex flex-col gap-1.5 rounded-2xl border border-(--c-border) bg-(--c-surface) p-5 transition duration-300 hover:-translate-y-1 hover:border-(--c-accent) hover:shadow-(--shadow-md)">
+              <span class="mb-1 inline-flex size-11 items-center justify-center rounded-xl bg-(--c-accent) text-lg font-bold text-(--c-accent-contrast)">⌨</span>
+              <span class="text-xs font-semibold uppercase tracking-wider text-(--c-text-soft)">GitHub</span>
+              <span class="font-semibold">Coming Soon...</span>
+            </a>
+            <a href="https://www.linkedin.com/in/abolfazl-pourmohabbat/" target="_blank" rel="noopener" class="group flex flex-col gap-1.5 rounded-2xl border border-(--c-border) bg-(--c-surface) p-5 transition duration-300 hover:-translate-y-1 hover:border-(--c-accent) hover:shadow-(--shadow-md)">
+              <span class="mb-1 inline-flex size-11 items-center justify-center rounded-xl bg-(--c-accent) text-lg font-bold text-(--c-accent-contrast)">in</span>
+              <span class="text-xs font-semibold uppercase tracking-wider text-(--c-text-soft)">LinkedIn</span>
+              <span class="font-semibold">/in/abolfazl-pourmohabbat</span>
+            </a>
+            <a href="https://t.me/pourmohabbat" target="_blank" rel="noopener" class="group flex flex-col gap-1.5 rounded-2xl border border-(--c-border) bg-(--c-surface) p-5 transition duration-300 hover:-translate-y-1 hover:border-(--c-accent) hover:shadow-(--shadow-md)">
+              <span class="mb-1 inline-flex size-11 items-center justify-center rounded-xl bg-(--c-accent) text-lg font-bold text-(--c-accent-contrast)">✈</span>
+              <span class="text-xs font-semibold uppercase tracking-wider text-(--c-text-soft)">Telegram</span>
+              <span class="font-semibold">@pourmohabbat</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- DOWNLOAD CTA -->
+        <!-- <div class="mt-8 flex flex-col items-center gap-4 rounded-[20px] bg-linear-to-br from-(--c-accent) to-(--c-accent-2) p-8 text-center text-(--c-accent-contrast) shadow-(--shadow-lg)">
+          <p data-i18n="download.text" class="text-lg font-semibold">Want a printable copy of my resume?</p>
+          <a id="downloadResumeBtn" href="./assets/pdf/resume-dark-red.pdf" download class="inline-flex items-center gap-2 rounded-full bg-(--c-bg) px-6 py-3.5 text-[.95rem] font-bold text-(--c-text) shadow-(--shadow-md) transition duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-(--shadow-lg)">
+            <span aria-hidden="true" class="text-[1.2em]">↓</span>
+            <span data-i18n="download.btn">Download PDF</span>
+          </a>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- Floating resume controls -->
+    <div id="floating" class="pointer-events-none fixed bottom-7 right-4 z-80 flex translate-y-5 flex-col gap-2.5 opacity-0 transition-[opacity,transform] duration-500">
+      <button id="backToTop" type="button" title="Back to top" aria-label="Back to top" class="inline-flex size-12 items-center justify-center rounded-full bg-(--c-accent) text-lg font-bold text-(--c-accent-contrast) shadow-(--shadow-md) transition duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-(--shadow-lg)">↑</button>
+      <button id="floatingClose" type="button" title="Close resume" aria-label="Close resume" class="inline-flex size-12 items-center justify-center rounded-full border border-(--c-border) bg-(--c-surface) text-lg font-bold text-(--c-text) shadow-(--shadow-md) transition duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-(--shadow-lg)">✕</button>
+    </div>
+
+    <footer id="footer" class="border-t border-(--c-border) px-5 py-8 text-center text-sm text-(--c-text-soft) transition-[opacity,transform] duration-500">
+      <p>
+        <span data-i18n="footer.made">Crafted with care by</span>
+        <span data-i18n="hero.name" class="font-semibold text-(--c-accent)">Abolfazl Pourmohabbat</span>
+        <span class="mx-1.5 opacity-50">·</span>
+        <span data-i18n="footer.year" id="footerYear">2026</span>
+      </p>
+    </footer>
+    
+    <script src="./app.js"></script>
+  </body>
+</html>

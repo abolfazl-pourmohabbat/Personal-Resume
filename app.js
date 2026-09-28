@@ -62,7 +62,10 @@ So, instead of asking you to simply trust me, take a look at my work and see wha
     },
 
     social: {
-      github: { url: "", label: "GitHub" },
+      github: {
+        url: "https://github.com/abolfazl-pourmohabbat",
+        label: "GitHub",
+      },
       linkedin: {
         url: "https://www.linkedin.com/in/abolfazl-pourmohabbat/",
         label: "LinkedIn",
@@ -91,7 +94,7 @@ So, instead of asking you to simply trust me, take a look at my work and see wha
       {
         icon: "⚡",
         name: { en: "JavaScript (ES6+)", fa: "جاوااسکریپت (ES6+)" },
-        level: 80,
+        level: 95,
       },
       {
         icon: "🌀",
@@ -131,8 +134,8 @@ So, instead of asking you to simply trust me, take a look at my work and see wha
           fa: "پروژه‌های شخصی و تمرین",
         },
         description: {
-          en: "Built multiple small projects to master HTML, CSS, and JavaScript fundamentals. Explored modern UI patterns and accessibility.",
-          fa: "ساخت چندین پروژه کوچک برای تسلط بر اصول HTML، CSS و جاوااسکریپت. کاوش در الگوهای مدرن UI و دسترسی‌پذیری.",
+          en: "Built multiple small projects to master HTML5, CSS3, and JavaScript fundamentals. Explored modern UI patterns and accessibility.",
+          fa: "ساخت چندین پروژه کوچک برای تسلط بر اصول HTML5، CSS3 و جاوااسکریپت. کاوش در الگوهای مدرن UI و دسترسی‌پذیری.",
         },
       },
     ],
@@ -158,19 +161,30 @@ So, instead of asking you to simply trust me, take a look at my work and see wha
     projects: [
       {
         title: {
-          en: "Bakery & Café Website",
-          fa: "وب‌سایت نانوایی و کافه",
+          en: "Jind — API-Powered Job Search SPA",
+          fa: "جایند — اپلیکیشن تک‌صفحه‌ای جست‌وجوی شغل مبتنی بر API",
         },
         description: {
-          en: "A modern bakery and café website showcasing fresh pastries, breads, desserts, and café offerings through a clean and inviting user experience.",
-          fa: "وب‌سایتی مدرن برای معرفی نان‌های تازه، شیرینی‌ها، دسرها و محصولات کافه با طراحی تمیز و تجربه کاربری جذاب.",
+          en: "A modular, API-driven SPA built from scratch with Vanilla JavaScript and ES Modules. Includes asynchronous data fetching, dynamic rendering, interactive job search, sorting, pagination, and persistent bookmarks using localStorage.",
+          fa: "یک پلتفرم جست‌وجوی شغل مبتنی بر API که از صفر با جاوااسکریپت ماژولار ساخته شده است. این پروژه شامل دریافت غیرهم‌زمان داده‌ها، رندر پویای محتوا، جست‌وجو و مرتب‌سازی تعاملی مشاغل، صفحه‌بندی و ذخیره‌ی آگهی‌های نشان‌شده است. همچنین با استفاده از localStorage، آگهی‌های ذخیره‌شده حتی پس از بارگذاری مجدد صفحه در دسترس می‌مانند؛ همه‌ی این قابلیت‌ها بدون استفاده از فریم‌ورک فرانت‌اند پیاده‌سازی شده‌اند.",
         },
-        stack: ["HTML", "Tailwind CSS", "JavaScript"],
-        image: "/assets/images/thereal-bakery.webp",
-        url: "https://therealbakery.vercel.app/",
+        stack: [
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "Responsive UI",
+          "SPA",
+          "REST API",
+          "Async/Await",
+          "ES Modules",
+          "localStorage",
+        ],
+        image: "/assets/images/jind.webp",
+        url: "https://jind-remote.vercel.app/",
         live: "#",
-        repo: "#",
+        repo: "https://github.com/abolfazl-pourmohabbat/Jind",
       },
+
       {
         title: {
           en: "Feedback Management Platform",
@@ -180,9 +194,24 @@ So, instead of asking you to simply trust me, take a look at my work and see wha
           en: "A modern platform for collecting, organizing, and analyzing customer feedback through a clean and intuitive interface.",
           fa: "پلتفرمی مدرن برای جمع‌آوری، سازمان‌دهی و تحلیل بازخورد مشتریان با رابط کاربری تمیز و کاربرپسند.",
         },
-        stack: ["HTML", "Tailwind CSS", "JavaScript", "REST API", "SPA"],
+        stack: ["HTML5", "CSS3", "JavaScript", "REST API", "SPA"],
         image: "/assets/images/feedback-core.webp",
         url: "https://feedbackcore.vercel.app/",
+        live: "#",
+        repo: "https://github.com/abolfazl-pourmohabbat/FeedBackCore",
+      },
+      {
+        title: {
+          en: "Bakery & Café Website",
+          fa: "وب‌سایت نانوایی و کافه",
+        },
+        description: {
+          en: "A modern bakery and café website showcasing fresh pastries, breads, desserts, and café offerings through a clean and inviting user experience.",
+          fa: "وب‌سایتی مدرن برای معرفی نان‌های تازه، شیرینی‌ها، دسرها و محصولات کافه با طراحی تمیز و تجربه کاربری جذاب.",
+        },
+        stack: ["HTML5", "Tailwind CSS", "JavaScript"],
+        image: "/assets/images/thereal-bakery.webp",
+        url: "https://therealbakery.vercel.app/",
         live: "#",
         repo: "#",
       },
@@ -192,7 +221,7 @@ So, instead of asking you to simply trust me, take a look at my work and see wha
           en: "A modern JavaScript image search application that allows users to quickly discover, browse, and download images through a clean and responsive interface.",
           fa: "یک اپلیکیشن مدرن مبتنی بر JavaScript برای جستجو، مشاهده و دانلود سریع تصاویر با رابط کاربری تمیز و ریسپانسیو.",
         },
-        stack: ["HTML", "CSS", "JavaScript", "REST API"],
+        stack: ["HTML5", "CSS", "JavaScript", "REST API"],
         image: "/assets/images/image-gallery.webp",
         url: "https://ap-galleryimage.vercel.app/",
         live: "#",
@@ -204,21 +233,9 @@ So, instead of asking you to simply trust me, take a look at my work and see wha
           en: "A JavaScript-based tool for configuring products, quantities, taxes, shipping, and estimated order totals.",
           fa: "یک ابزار مدیریت و محاسبه سفارش مبتنی بر JavaScript که امکان انتخاب محصولات، تعیین تعداد، اعمال مالیات و هزینه ارسال و محاسبه مبلغ نهایی سفارش را فراهم می‌کند.",
         },
-        stack: ["HTML", "CSS", "JavaScript"],
+        stack: ["HTML5", "CSS", "JavaScript"],
         image: "/assets/images/factor.webp",
         url: "https://ap-factor.vercel.app/",
-        live: "#",
-        repo: "#",
-      },
-      {
-        title: { en: "Travel Website", fa: "وب‌سایت گردشگری" },
-        description: {
-          en: "A responsive travel website built with HTML, CSS, and JavaScript, featuring destination-focused sections, intuitive navigation, and an immersive visual experience.",
-          fa: "یک وب‌سایت ریسپانسیو گردشگری ساخته‌شده با HTML، CSS و JavaScript که با تمرکز بر معرفی مقصدهای گردشگری، ناوبری ساده و طراحی بصری جذاب، تجربه‌ای مناسب برای کاربران فراهم می‌کند.",
-        },
-        stack: ["HTML", "CSS", "JavaScript"],
-        image: "/assets/images/travelo.webp",
-        url: "https://ap-travelo.vercel.app/",
         live: "#",
         repo: "#",
       },
@@ -226,7 +243,8 @@ So, instead of asking you to simply trust me, take a look at my work and see wha
 
     i18n: {
       en: {
-        "meta.title": "Abolfazl Pourmohabbat | Front-end Developer (Tailwind Css/Angular)",
+        "meta.title":
+          "Abolfazl Pourmohabbat | Front-end Developer (Tailwind Css/Angular)",
         "meta.description":
           "Abolfazl Pourmohabbat — Front-end Developer. Crafting performant, accessible, and beautiful web experiences.",
         "brand.mark": "AP",
@@ -546,7 +564,7 @@ Let's talk. Reach out through any of the channels below and let's see what we ca
             ? `<a href="${project.live}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded-full border border-(--c-border) bg-(--c-bg-2) px-3 py-1.5 text-xs font-semibold transition hover:-translate-y-0.5 hover:border-(--c-accent) hover:bg-(--c-accent) hover:text-(--c-accent-contrast)">↗ Live</a>`
             : "",
           project.repo && project.repo !== "#"
-            ? `<a href="${project.repo}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded-full border border-(--c-border) bg-(--c-bg-2) px-3 py-1.5 text-xs font-semibold transition hover:-translate-y-0.5 hover:border-(--c-accent) hover:bg-(--c-accent) hover:text-(--c-accent-contrast)">⌨ Code</a>`
+            ? `<a href="${project.repo}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 rounded-full border border-(--c-border) bg-(--c-bg-2) px-3 py-1.5 text-xs font-semibold transition hover:-translate-y-0.5 hover:border-(--c-accent) hover:bg-(--c-accent) hover:text-(--c-accent-contrast)">⌨ GitHub</a>`
             : "",
         ].join("");
 
